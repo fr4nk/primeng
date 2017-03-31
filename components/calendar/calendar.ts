@@ -636,7 +636,7 @@ export class Calendar implements AfterViewInit,OnInit,OnDestroy,ControlValueAcce
     onButtonClick(event,inputfield) {
         this.closeOverlay = false;
         
-        if(!this.overlay.offsetParent) {
+        if(!this.overlay.offsetParent || this.overlay.style.display === 'none') {
             inputfield.focus();
             this.showOverlay(inputfield);
         }
